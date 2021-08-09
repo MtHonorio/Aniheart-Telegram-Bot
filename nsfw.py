@@ -4,16 +4,16 @@ import requests
 import logging
 import token_code
 import hmtai
+from jikanpy import Jikan
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
 
 #requisicao = requests.get()
-
-print(hmtai.useHM(version="v2", category="ass"))
 #context.bot.send_photo(chat_id=update.effective_chat.id, photo=r)
 
-# print(r)
+jikan = Jikan()
+print(jikan.anime(14719))
 
 
 class Hentaii(object):
@@ -50,6 +50,7 @@ class Hentaii(object):
 
     def dinamico(self, update, context):
         print('Chamada de função de dinâmica')
+        # pega somente a primeira palavra apos o comando
         categoria = context.args[0]
         print('Categoria: ' + categoria)
         img = hmtai.useHM(version="v2", category="" + categoria)
